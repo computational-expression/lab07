@@ -1,0 +1,163 @@
+- description: Have at least a minimum number (at least 5) of commits in repository
+  check: CountCommits
+  options:
+    count: 5
+- description: Function verification tests pass (checks that all 8 required functions are defined with correct names and parameters)
+  check: ExecuteCommand
+  options:
+    command: python3 tests/verify_functions.py
+- src/main.py:
+    - description: Check file exists
+      check: ConfirmFileExists
+    - description: Import dht module for sensor communication (at least 1 time)
+      check: MatchFileFragment
+      options:
+        fragment: import dht
+        count: 1
+        exact: false
+    - description: Import machine module for GPIO control (at least 1 time)
+      check: MatchFileFragment
+      options:
+        fragment: import machine
+        count: 1
+        exact: false
+    - description: Import time module for delays (at least 1 time)
+      check: MatchFileFragment
+      options:
+        fragment: import time
+        count: 1
+        exact: false
+    - description: Use DHT22 sensor initialization (at least 1 time)
+      check: MatchFileFragment
+      options:
+        fragment: dht.DHT22
+        count: 1
+        exact: false
+    - description: Use sensor measure method .measure() (at least 1 time)
+      check: MatchFileFragment
+      options:
+        fragment: .measure()
+        count: 1
+        exact: false
+    - description: Use sensor temperature method .temperature() (at least 1 time)
+      check: MatchFileFragment
+      options:
+        fragment: .temperature()
+        count: 1
+        exact: false
+    - description: Use sensor humidity method .humidity() (at least 1 time)
+      check: MatchFileFragment
+      options:
+        fragment: .humidity()
+        count: 1
+        exact: false
+    - description: Use return statements in functions (at least 8 times)
+      check: MatchFileFragment
+      options:
+        fragment: return
+        count: 8
+        exact: false
+    - description: Use print statements for output print( (at least 20 times)
+      check: MatchFileFragment
+      options:
+        fragment: print(
+        count: 20
+        exact: false
+    - description: Use input for user interaction input( (at least 2 times)
+      check: MatchFileFragment
+      options:
+        fragment: input(
+        count: 2
+        exact: false
+    - description: Use for loop iteration (at least 2 times)
+      check: MatchFileFragment
+      options:
+        fragment: 'for '
+        count: 2
+        exact: false
+    - description: Use range function for loops range( (at least 1 time)
+      check: MatchFileFragment
+      options:
+        fragment: range(
+        count: 1
+        exact: false
+    - description: Use if statements for logic (at least 15 times)
+      check: MatchFileFragment
+      options:
+        fragment: 'if '
+        count: 15
+        exact: false
+    - description: Use else statements for alternative paths (at least 5 times)
+      check: MatchFileFragment
+      options:
+        fragment: 'else:'
+        count: 5
+        exact: false
+    - description: Use elif statements for multiple conditions (at least 3 times)
+      check: MatchFileFragment
+      options:
+        fragment: 'elif '
+        count: 3
+        exact: false
+    - description: Use mathematical operations for calculations (at least 5 times)
+      check: MatchFileFragment
+      options:
+        fragment: ' * '
+        count: 5
+        exact: false
+    - description: Use addition operations (at least 3 times)
+      check: MatchFileFragment
+      options:
+        fragment: ' + '
+        count: 3
+        exact: false
+    - description: Use division operations (at least 2 times)
+      check: MatchFileFragment
+      options:
+        fragment: ' / '
+        count: 2
+        exact: false
+    - description: Use min() function for statistical analysis (at least 2 times)
+      check: MatchFileFragment
+      options:
+        fragment: min(
+        count: 2
+        exact: false
+    - description: Use max() function for statistical analysis (at least 2 times)
+      check: MatchFileFragment
+      options:
+        fragment: max(
+        count: 2
+        exact: false
+    - description: Use sum() function for calculations (at least 2 times)
+      check: MatchFileFragment
+      options:
+        fragment: sum(
+        count: 2
+        exact: false
+    - description: Use len() function for counting (at least 2 times)
+      check: MatchFileFragment
+      options:
+        fragment: len(
+        count: 2
+        exact: false
+    - description: Complete all TODOs (no TODO comments remaining in main.py)
+      check: MatchFileFragment
+      options:
+        fragment: TODO
+        count: 0
+        exact: false
+
+- writing/reflection.md:
+    - description: Check reflection exists
+      check: ConfirmFileExists
+    - description: Write sufficient words (at least 200 words)
+      check: CountFileWords
+      options:
+        count: 200
+    - description: Use markdown lists using - (at least 6 list items total)
+      check: MatchFileFragment
+      options:
+        fragment: '- '
+        count: 6
+        exact: false
