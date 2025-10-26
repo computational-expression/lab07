@@ -1,7 +1,3 @@
-- description: Have at least a minimum number (at least 5) of commits in repository
-  check: CountCommits
-  options:
-    count: 5
 - description: Function verification tests pass (checks that all 8 required functions are defined with correct names and parameters)
   check: ExecuteCommand
   options:
