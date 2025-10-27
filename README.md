@@ -1,7 +1,5 @@
 # Lab 7: Environment Monitor with Functions and Sensor Data
 
-[![build](https://github.com/allegheny-college-cmpsc-100-fall-2025/lab07/workflows/build/badge.svg)](https://github.com/allegheny-college-cmpsc-100-fall-2025/lab07/actions)
-
 ## Overview
 
 This lab focuses on **function organization** and **sensor data analysis** by creating an environment monitoring system. You will learn to use functions effectively to read DHT22 sensor data, perform mathematical calculations, and generate statistical summaries of environmental conditions.
