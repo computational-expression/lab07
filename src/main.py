@@ -29,7 +29,7 @@ import dht
 # 4. A function to classify environmental conditions
 #    - Classify temperature into categories (Cold, Cool, Comfortable, Warm, Hot)
 #    - Classify humidity into categories (Dry, Comfortable, Humid, Very Humid)
-#    - Return dictionary with both classifications
+#    - Return tuple with both classifications (temp_category, humidity_category)
 #
 # 5. A function to display a single sensor reading with analysis
 #    - Print reading header with reading number
@@ -39,15 +39,16 @@ import dht
 # 6. A function to calculate statistics from multiple readings
 #    - Separate valid temperature and humidity values using loops
 #    - Calculate min, max, and average for both temperature and humidity
-#    - Return statistics dictionary
+#    - Return statistics as tuple (temp_min, temp_max, temp_avg, humidity_min, humidity_max, humidity_avg, reading_count)
 #
 # 7. A function to display summary statistics
 #    - Display formatted header with location name
 #    - Show temperature and humidity statistics in organized format
 #    - Include additional math operations for requirements
 #
-# 8. A function to wait for user input between readings
-#    - Use input() to wait for user to press Enter
+# 8. A function to wait between readings
+#    - Print message about waiting
+#    - Use time.sleep() to pause for a few seconds
 
 def main():
     """Main function to run the environment monitoring system."""
@@ -92,7 +93,8 @@ def main():
         # Wait before next reading (except last one)
         if reading_num < readings_count:
             # TODO: Call your wait function here
-            input("\nPress Enter to take another reading...")  # Replace with your function
+            print("\nWaiting 3 seconds before next reading...")  # Replace with your function
+            time.sleep(3)
             time.sleep(2)
     
     # TODO: Call your statistics calculation function here
