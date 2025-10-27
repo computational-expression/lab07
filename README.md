@@ -1,16 +1,16 @@
-# Lab 7: Environment Monitor with Functions and Sensor Data
+# Lab 7: Environment Monitor with Functions and Sensor Data (SOLUTION)
 
-[![build](https://github.com/allegheny-college-cmpsc-100-fall-2025/lab07-starter/workflows/build/badge.svg)](https://github.com/allegheny-college-cmpsc-100-fall-2025/lab07-starter/actions)
+[![build](https://github.com/allegheny-college-cmpsc-100-fall-2025/lab07-solution/workflows/build/badge.svg)](https://github.com/allegheny-college-cmpsc-100-fall-2025/lab07/actions)
 
 ## Overview
 
-This lab focuses on **function organization** and **sensor data analysis** by creating an environment monitoring system. You'll learn to use functions effectively to read DHT22 sensor data, perform mathematical calculations, and generate statistical summaries of environmental conditions.
+This lab focuses on **function organization** and **sensor data analysis** by creating an environment monitoring system. You will learn to use functions effectively to read DHT22 sensor data, perform mathematical calculations, and generate statistical summaries of environmental conditions.
 
 ## Learning Objectives
 
 - Practice writing and calling functions with parameters and return values
 - Learn to integrate sensor hardware (DHT22) with MicroPython
-- Apply mathematical calculations for data analysis and heat index
+- Apply mathematical calculations for data analysis and comfort assessment
 - Use conditional logic to classify environmental conditions
 - Calculate and display statistical summaries (min, max, average)
 - Practice error handling for hardware operations
@@ -39,10 +39,10 @@ Your environment monitoring system includes these **8 required functions**:
    - Formula: `F = (C × 9/5) + 32`
    - Handles None input
 
-3. **`calculate_heat_index(temp_f, humidity)`**
-   - Calculates "feels like" temperature
-   - Uses National Weather Service heat index formula
-   - Returns heat index in Fahrenheit
+3. **Comfort Assessment Function**
+   - Calculates comfort level based on temperature and humidity
+   - Uses mathematical formulas to assess environmental comfort
+   - Returns comfort assessment string
 
 4. **`classify_conditions(temp_c, humidity)`**
    - Classifies temperature and humidity levels
@@ -51,7 +51,7 @@ Your environment monitoring system includes these **8 required functions**:
 
 5. **`display_reading(reading_num, temp_c, humidity, conditions)`**
    - Displays individual sensor reading with analysis
-   - Shows temperature, humidity, heat index, and comfort level
+   - Shows temperature, humidity, comfort level, and environmental categories
    - Handles missing data gracefully
 
 6. **`calculate_statistics(readings)`**
@@ -146,28 +146,27 @@ Taking 3 readings...
 --- Reading #1 ---
 Temperature: 22.5°C (72.5°F)
 Humidity: 45.0%
-Heat Index: 72.5°F (feels like)
-Temperature: Comfortable
-Humidity: Comfortable
-Comfort: Very Comfortable (100/100)
+Comfort Level: Perfect Comfort Zone
+Temperature Category: Comfortable
+Humidity Category: Comfortable
 
 Press Enter to take another reading...
 
 --- Reading #2 ---
 Temperature: 23.1°C (73.6°F)
 Humidity: 48.2%
-Temperature: Comfortable
-Humidity: Comfortable
-Comfort: Very Comfortable (100/100)
+Comfort Level: Perfect Comfort Zone
+Temperature Category: Comfortable
+Humidity Category: Comfortable
 
 Press Enter to take another reading...
 
 --- Reading #3 ---
 Temperature: 22.8°C (73.0°F)
 Humidity: 46.5%
-Temperature: Comfortable
-Humidity: Comfortable
-Comfort: Very Comfortable (100/100)
+Comfort Level: Perfect Comfort Zone
+Temperature Category: Comfortable
+Humidity Category: Comfortable
 
 ==================================================
 SUMMARY FOR 'MY ROOM'
@@ -192,7 +191,7 @@ You've learned to use functions for sensor data analysis!
 
 ### **Sensor Data Analysis**
 - Reads temperature and humidity from DHT22 sensor
-- Calculates heat index ("feels like" temperature)
+- Calculates comfort level based on environmental conditions
 - Classifies environmental conditions
 - Provides comfort level assessments
 
@@ -205,30 +204,8 @@ You've learned to use functions for sensor data analysis!
 ### **Comprehensive Function Design**
 - **8 well-structured functions** for clear code organization
 - **1-10 readings** for flexible data collection
-- **Mathematical calculations** for heat index and statistics
+- **Mathematical calculations** for comfort assessment and statistics
 - **Classification logic** for environmental assessment
-
-## Software Setup
-
-1. **Required Libraries** (included with MicroPython):
-   ```python
-   import machine
-   import time
-   import dht
-   ```
-
-2. **Test Sensor Connection**:
-   ```python
-   import machine
-   import dht
-   
-   dht_pin = machine.Pin(2)
-   sensor = dht.DHT22(dht_pin)
-   
-   sensor.measure()
-   print(f"Temperature: {sensor.temperature()}°C")
-   print(f"Humidity: {sensor.humidity()}%")
-   ```
 
 ## Error Handling
 
@@ -238,27 +215,6 @@ Your program should handle:
 - **Invalid User Input**: Constrain values using `min()` and `max()`
 - **Missing Data**: Handle None values gracefully in all functions
 - **Mathematical Edge Cases**: Handle division by zero and invalid inputs
-
-## Testing
-
-The lab includes testing focused on the core functions:
-
-- **Function Verification**: Ensures all 8 functions exist with correct signatures
-
-Run tests with:
-```bash
-python3 tests/verify_functions.py
-```
-
-## Mathematical Concepts
-
-This lab reinforces several mathematical concepts:
-
-1. **Temperature Conversion**: Linear transformation between Celsius and Fahrenheit
-2. **Heat Index Calculation**: Complex polynomial formula for "feels like" temperature
-3. **Statistical Analysis**: Min, max, and average calculations
-4. **Range Validation**: Using `min()` and `max()` for bounds checking
-5. **Conditional Logic**: Classification based on numerical thresholds
 
 ## Debugging Tips
 
@@ -275,43 +231,15 @@ This lab reinforces several mathematical concepts:
 - **Statistical Calculation Errors**: Handle empty lists and None values
 - **Import Errors**: Ensure using MicroPython on Pico
 
-## Programming Concepts Introduced
-
-### **Function Organization**
-- Parameter passing and return values
-- Data processing and mathematical operations
-- Error handling strategies
-- Modular code design
-
-### **Mathematical Programming**
-- Statistical calculations (min, max, average)
-- Heat index formula implementation
-- Conditional classification logic
-- Data validation and constraint checking
-
 ## Submission
 
 Ensure your submission includes:
 
 - [ ] All 8 required functions implemented correctly
 - [ ] Proper DHT22 sensor integration
-- [ ] **Heat index calculation** using mathematical formula
+- [ ] **Comfort assessment calculation** using mathematical formula
 - [ ] **Environmental classification** with conditional logic
 - [ ] **Statistical analysis** with min, max, and average calculations
 - [ ] Error handling for sensor operations and data validation
 - [ ] Input validation using `min()` and `max()`
-- [ ] Mathematical calculations (temperature conversion, heat index, statistics)
-
-## Function Requirements Checklist
-
-- [ ] `read_sensor()` - DHT22 sensor reading
-- [ ] `celsius_to_fahrenheit()` - Temperature conversion
-- [ ] `calculate_heat_index()` - Heat index calculation
-- [ ] `classify_conditions()` - Environmental assessment
-- [ ] `display_reading()` - Individual reading display
-- [ ] `calculate_statistics()` - Statistical analysis
-- [ ] `display_summary()` - Summary report generation
-- [ ] `wait_for_user()` - User interaction
-- [ ] `main()` - Program coordination
-
-This lab provides an excellent introduction to function-based programming with practical sensor applications, mathematical calculations, and statistical analysis - all essential skills for computational problem-solving.
+- [ ] Mathematical calculations (temperature conversion, comfort assessment, statistics)
