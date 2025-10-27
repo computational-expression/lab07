@@ -132,61 +132,6 @@ Pin 38 = GND (Ground)
    print(f"Humidity: {sensor.humidity()}%")
    ```
 
-## Sample Output
-
-```
-Lab 7: Environment Monitor with Sensor Data
-==================================================
-Enter your location name: My Room
-How many readings to take (1-10)? 3
-
-Monitoring environment at 'My Room'
-Taking 3 readings...
-
---- Reading #1 ---
-Temperature: 22.5°C (72.5°F)
-Humidity: 45.0%
-Comfort Level: Perfect Comfort Zone
-Temperature Category: Comfortable
-Humidity Category: Comfortable
-
-Press Enter to take another reading...
-
---- Reading #2 ---
-Temperature: 23.1°C (73.6°F)
-Humidity: 48.2%
-Comfort Level: Perfect Comfort Zone
-Temperature Category: Comfortable
-Humidity Category: Comfortable
-
-Press Enter to take another reading...
-
---- Reading #3 ---
-Temperature: 22.8°C (73.0°F)
-Humidity: 46.5%
-Comfort Level: Perfect Comfort Zone
-Temperature Category: Comfortable
-Humidity Category: Comfortable
-
-==================================================
-SUMMARY FOR 'MY ROOM'
-==================================================
-Total Readings: 3
-
-TEMPERATURE:
-  Minimum: 22.5°C (72.5°F)
-  Maximum: 23.1°C (73.6°F)
-  Average: 22.8°C (73.0°F)
-
-HUMIDITY:
-  Minimum: 45.0%
-  Maximum: 48.2%
-  Average: 46.6%
-
-Monitoring complete for My Room!
-You've learned to use functions for sensor data analysis!
-```
-
 ## Key Features
 
 ### **Sensor Data Analysis**
@@ -243,3 +188,111 @@ Ensure your submission includes:
 - [ ] Error handling for sensor operations and data validation
 - [ ] Input validation using `min()` and `max()`
 - [ ] Mathematical calculations (temperature conversion, comfort assessment, statistics)
+
+## Submission Instructions
+
+Submit to GitHub frequently! Use this workflow:
+
+```bash
+git add src/main.py writing/reflection.md
+git commit -m "Complete environment monitor with functions and sensor data"
+git push
+```
+
+Verify your submission online and ensure GatorGrade passes automated testing.
+
+## Getting Help
+
+### During Lab
+- Ask TLs or instructor for help with specific questions or hardware issues
+- Work with classmates on understanding concepts (but write your own code)
+- Use the lab time to understand function concepts and sensor integration
+
+### Outside Lab  
+- Post questions in Discord
+- Attend [TL office hours](https://www.cis.allegheny.edu/teaching/technicalleaders/) and/or [instructor office hours](https://janyljumadinova.com/schedule/) to seek help outside of class
+- Review the slides for concept reinforcement
+
+### Resources
+- [Python Documentation](https://docs.python.org/3/)
+- [MicroPython Documentation](https://docs.micropython.org/)
+- Course slides and examples from class activities
+
+## Assessment Criteria - Total: 4.5 Points
+
+### Technical Implementation (3.0 points)
+- **Automated GatorGrade checks**: 2.0 points (based on function implementation and sensor integration)
+- **Hardware execution verification**: 1.0 point (program runs correctly on Pico with DHT22 circuit)
+
+### Code Quality and Style (1.0 point)  
+- **Descriptive variable names** and **clean organization** (0.6 pts)
+- **Appropriate comments** explaining function logic (0.4 pts)
+
+### Reflection and Engagement (0.5 points)
+- **Thoughtful reflection** on function concepts and sensor data analysis
+
+*GatorGrade checks verify: function definitions, sensor integration, mathematical calculations, and code organization*
+
+### Grading Information
+- **Grades will be released in Canvas** after manual code review is complete
+- **Detailed feedback will be provided as a GitHub issue** in your Lab 7 repository
+- Check your repository for personalized feedback on code quality and suggestions for improvement
+
+## Sample Output
+
+Example output from your environment monitoring system:
+
+```
+Lab 7: Environment Monitor with Sensor Data
+==================================================
+Enter your location name: My Room
+How many readings to take (1-10)? 3
+
+Monitoring environment at 'My Room'
+Taking 3 readings...
+
+--- Reading #1 ---
+Temperature: 22.5°C (72.5°F)
+Humidity: 45.0%
+Comfort Level: Perfect Comfort Zone
+Temperature Category: Comfortable
+Humidity Category: Comfortable
+
+Press Enter to take another reading...
+
+--- Reading #2 ---
+Temperature: 23.1°C (73.6°F)
+Humidity: 48.2%
+Comfort Level: Perfect Comfort Zone
+Temperature Category: Comfortable
+Humidity Category: Comfortable
+
+Press Enter to take another reading...
+
+--- Reading #3 ---
+Temperature: 22.8°C (73.0°F)
+Humidity: 46.5%
+Comfort Level: Perfect Comfort Zone
+Temperature Category: Comfortable
+Humidity Category: Comfortable
+
+==================================================
+SUMMARY FOR 'MY ROOM'
+==================================================
+Total Readings: 3
+
+TEMPERATURE:
+  Minimum: 22.5°C (72.5°F)
+  Maximum: 23.1°C (73.6°F)
+  Average: 22.8°C (73.0°F)
+
+HUMIDITY:
+  Minimum: 45.0%
+  Maximum: 48.2%
+  Average: 46.6%
+
+Monitoring complete for My Room!
+You've learned to use functions for sensor data analysis!
+```
+
+*Your DHT22 sensor will provide real temperature and humidity readings from your environment.*
