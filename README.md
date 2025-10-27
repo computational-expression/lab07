@@ -1,6 +1,6 @@
-# Lab 7: Environment Monitor with Functions and Sensor Data (SOLUTION)
+# Lab 7: Environment Monitor with Functions and Sensor Data
 
-[![build](https://github.com/allegheny-college-cmpsc-100-fall-2025/lab07-solution/workflows/build/badge.svg)](https://github.com/allegheny-college-cmpsc-100-fall-2025/lab07/actions)
+[![build](https://github.com/allegheny-college-cmpsc-100-fall-2025/lab07/workflows/build/badge.svg)](https://github.com/allegheny-college-cmpsc-100-fall-2025/lab07/actions)
 
 ## Overview
 
@@ -25,16 +25,16 @@ This lab focuses on **function organization** and **sensor data analysis** by cr
 
 ## Program Features
 
-Your environment monitoring system includes these **8 required functions**:
+Your environment monitoring system includes these **9 required functions**:
 
 ### Core Functions
 
-1. **`read_sensor(dht_sensor)`**
+1. **Sensor Reading Function**
    - Reads temperature and humidity from DHT22
    - Returns tuple: `(temperature_celsius, humidity_percent)`
    - Handles sensor errors gracefully
 
-2. **`celsius_to_fahrenheit(celsius)`**
+2. **Temperature Conversion Function**
    - Converts Celsius to Fahrenheit
    - Formula: `F = (C × 9/5) + 32`
    - Handles None input
@@ -44,27 +44,27 @@ Your environment monitoring system includes these **8 required functions**:
    - Uses mathematical formulas to assess environmental comfort
    - Returns comfort assessment string
 
-4. **`classify_conditions(temp_c, humidity)`**
+4. **Environmental Classification Function**
    - Classifies temperature and humidity levels
    - Assigns comfort scores and categories
    - Returns comprehensive environmental assessment
 
-5. **`display_reading(reading_num, temp_c, humidity, conditions)`**
+5. **Individual Reading Display Function**
    - Displays individual sensor reading with analysis
    - Shows temperature, humidity, comfort level, and environmental categories
    - Handles missing data gracefully
 
-6. **`calculate_statistics(readings)`**
+6. **Statistics Calculation Function**
    - Calculates min, max, and average from all readings
    - Processes lists of temperature and humidity data
    - Returns statistical summary dictionary
 
-7. **`display_summary(stats, location_name)`**
+7. **Summary Display Function**
    - Displays comprehensive statistics for all readings
    - Shows temperature and humidity ranges and averages
    - Provides formatted summary report
 
-8. **`wait_for_user()`**
+8. **User Interaction Function**
    - Simple user interaction for pacing readings
 
 9. **`main()`**

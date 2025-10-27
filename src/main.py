@@ -99,10 +99,8 @@ def main():
     stats = None  # Replace with your function call
     
     # TODO: Call your summary display function here
-    print(f"\nSummary functions not yet implemented")
     
     print(f"\nMonitoring complete for {location_name}!")
-    print("You've learned to use functions for sensor data analysis!")
-
+   
 if __name__ == "__main__":
     main()
